@@ -12,3 +12,4 @@ while i<=10:
     print(i)
     i=i+1
 
+# Print all possible combinations of 1,2,3 without repetition
