@@ -1,5 +1,5 @@
-import functions
-from functions import *
+import day7.mypack.functions as functions
+from day7.mypack.functions import *
 
 x=sum(4,5)
 print("Sum of two numbers is:",x)

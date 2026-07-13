@@ -15,4 +15,3 @@ def biggest(n1,n2):
     else:
         return n2
 
-__name__="my_functions"
