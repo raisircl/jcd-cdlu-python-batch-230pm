@@ -1,28 +1,43 @@
 class Rect:
-    counts=0 # class attribute
-    def __init__(self, l=0, b=0):
-        self.l=l # instance attribute
-        self.b=b
+    counts=0 # class attribute it increased on creation of every object
+    #count is common for all objects its last value retain in multiple function
+    #call it is like a global variable
+    
+    def __init__(self,l=1,b=1): # here l and b are local variable
+        self.__length=l
+        self.__breadth=b
         Rect.counts+=1
-        self.srno=Rect.counts 
+        self.__srno=Rect.counts
+
+    def __str__(self):
+        return f"Dimension of Rect{self.__srno} is {self.__length}x{self.__breadth}"
+
+    @property
+    def length(self):
+        return self.__length
+
+    @length.setter
+    def length(self,value):
+        self.__length=value
+
+    @property
+    def breadth(self):
+        return self.__breadth
+
+    @breadth.setter
+    def breadth(self,value):
+        self.__breadth=value
 
     def area(self):
-        return self.l*self.b
+        return self.__length*self.__breadth
     
-    def display(self):
-        print(f"Dimension of Rect{self.srno} {self.l}x{self.b}")
+    #length=property(get_length,set_length)
+    #breadth=property(get_breadth, set_breadth)
 
-r1=Rect()
-r2=Rect(6,2)
+#Assignments: Quadriletarl , side1, side2, side3, side4, function : perimeter()
+#BankAcc : Accno, AccName, Balance , deposit(), withdraw(), accinfo(), getbal()
+# Distance : feet, inch, AddDistance() used to add 2 distance objects
+# Box : length, breadth, height , area(), vol()
 
-r1.l=int(input("Enter length of Rect1: "))
-r1.b=int(input("Enter breadth of Rect1: "))
-
-r1.display()    
-r2.display()
-
-
-# BankAcc - AccNo, AccName, AccBal
-# deposit(self, amnt), withdraw(self, amnt), accinfo(self)
-
-# Box  - l, b, h , vol()
+    
+    
